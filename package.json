@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "db:migrate": "npx sequelize-cli db:migrate",
+    "postinstall": "cd client && npm install && npm run build",
     "dev": "nodemon ./bin/www",
     "db:reset": "npx sequelize-xli dv:drop; npx sequelize-cli db:create && npx sequelize-cli db:migrate"
   },
