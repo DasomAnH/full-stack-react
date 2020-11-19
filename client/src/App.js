@@ -1,21 +1,32 @@
 import './App.css';
 import Posts from './components/Posts';
-import { Container, Header, Segment, Icon } from 'semantic-ui-react';
+import Register from './components/Register';
+import { Container, Header, Segment, Icon, Button } from 'semantic-ui-react';
 import { Link, Route, Switch } from 'react-router-dom';
 import PostDetail from './components/PostDetail';
+import Login from './components/login';
 
 function App() {
   return (
     <Container>
       <Header textAlign='center' as='h2' icon>
-        <Icon color='black' name='edit outline' />
-        Daily
+        <Icon justify-content='center' color='black' name='edit outline' />
+        <Link to='/'>Daily</Link>
         <Header.Subheader>Write your Daily</Header.Subheader>
       </Header>
+      {/* Register button */}
+      <Button as={Link} to='/register'>
+        Sign in
+      </Button>
+      <Button as={Link} to='/login'>
+        Log in
+      </Button>
       <Segment vertical>
         <Switch>
           <Route path='/' exact component={Posts} />
           <Route path='/post/:postId' component={PostDetail} />
+          <Route path='/register' component={Register} />
+          <Route path='/login' component={Login} />
           {/* Fallback Page - 404 */}
           <Route>
             <Segment vertical textAlign='center'>

@@ -84,6 +84,7 @@ router.post('/', (req, res) => {
     title: req.body.title,
     content: req.body.content,
     published: req.body.published,
+    UserId: req.session.user.id,
   }).then(post => {
     res.status(201).json(post);
   });
@@ -141,6 +142,7 @@ router.post('/:postId/comments', (req, res) => {
         author: req.body.author,
         content: req.body.content,
         approved: true,
+        UserId: req.session.user.id,
       });
     })
     .then(comment => {
