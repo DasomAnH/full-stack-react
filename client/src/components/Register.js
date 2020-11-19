@@ -31,7 +31,7 @@ class Register extends Component {
         if (data.error) {
           alert(data.error);
         } else {
-          alert('success create user');
+          alert('successfully create user');
           this.props.history.push('/login');
         }
         console.log(data);
