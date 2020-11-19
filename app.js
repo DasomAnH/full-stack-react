@@ -13,7 +13,7 @@ const apiRegisterRouter = require('./routes/api-register');
 const apiLoginRouter = require('./routes/api-login');
 
 var app = express();
-
+store.sync();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

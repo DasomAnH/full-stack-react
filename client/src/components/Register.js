@@ -14,7 +14,6 @@ class Register extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
   handleSubmit(event) {
-    alert('A Register was submitted:' + this.state.value);
     event.preventDefault();
     fetch(`/api/v1/register`, {
       method: 'POST',
@@ -29,6 +28,12 @@ class Register extends Component {
     })
       .then(res => res.json())
       .then(data => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          alert('success create user');
+          this.props.history.push('/login');
+        }
         console.log(data);
       });
   }

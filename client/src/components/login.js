@@ -1,11 +1,13 @@
 import React, { Component, useState } from 'react';
 import { Button, Form, Header, Label, Input } from 'semantic-ui-react';
+import { useHistory } from 'react-router-dom';
 
 export default function Login() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState({});
+  const history = useHistory();
 
   const handleLogin = e => {
     fetch('/api/v1/login', {
@@ -20,6 +22,12 @@ export default function Login() {
     })
       .then(res => res.json())
       .then(data => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          alert('success login');
+          history.push('/');
+        }
         console.log(data);
       });
   };
