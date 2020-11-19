@@ -7,6 +7,7 @@
     "db:migrate": "npx sequelize-cli db:migrate",
     "postinstall": "cd client && npm install && npm run build",
     "dev": "nodemon ./bin/www",
+    "postinstall": "cd client && npm install && npm run build",
     "db:reset": "npx sequelize-cli db:drop; npx sequelize-cli db:create && npx sequelize-cli db:migrate"
   },
   "dependencies": {
