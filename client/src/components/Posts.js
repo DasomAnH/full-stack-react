@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, Header, Modal, Segment } from 'semantic-ui-react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function Posts() {
   const [formOpen, setFormOpen] = useState(false);
