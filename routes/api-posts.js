@@ -5,7 +5,11 @@ const models = require('../models');
 // Get All Posts
 // GET /api/v1/posts/
 router.get('/', function (req, res) {
-  models.Post.findAll().then(posts => {
+  models.Post.findAll({
+    where: {
+      UserId: req.session.user.id,
+    },
+  }).then(posts => {
     res.json(posts);
   });
 });
