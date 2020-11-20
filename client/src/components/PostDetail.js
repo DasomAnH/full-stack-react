@@ -15,8 +15,6 @@ export default function PostDetail() {
   const [post, setPost] = useState(null);
   const { postId } = useParams();
 
-  // const {delete, deletePost} = props
-
   useEffect(() => {
     fetch(`/api/v1/posts/${postId}`)
       .then(res => res.json())
@@ -24,12 +22,6 @@ export default function PostDetail() {
         setPost(data);
       });
   }, [postId]);
-
-  // const handleDelete (()=>{
-  //   fetch(`/api/v1/posts/${postId}`)
-  //     .then(res => deletePost(id))
-  //     .catch(error => console.log(error))
-  // })
 
   if (!post) {
     return (

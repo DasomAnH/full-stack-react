@@ -37,7 +37,7 @@ export default function Login() {
   };
 
   return (
-    <Form>
+    <Form className='loginform'>
       <Label>
         <Header>Log In </Header>
         <Input

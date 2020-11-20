@@ -1,3 +1,15 @@
+html {
+  background-image: url(./background.png);
+}
+
 .logbutton {
+  text-align: center;
+}
+
+.loginform {
+  text-align: center;
+}
+
+.register {
   text-align: center;
 }
